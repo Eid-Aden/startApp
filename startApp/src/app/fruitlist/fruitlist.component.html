@@ -1,8 +1,18 @@
+<!-- @for (item of fruitlist; track item.name ; let last= $first) {
+
+<p>
+  <u>{{ last }}{{ item.name }}</u>
+</p>
+} -->
+
 <div class="fruitlist_content">
   @for(item of fruitlist; track item.name){
+
   <section class="singleFruitBox">
     <div>
+      @if (item.stars>1.5) {
       <img src="./assets/img/fruits/{{ item.img }}" alt="" srcset="" />
+      }@else { The img is Missing Sorry!! }
     </div>
     <div>
       <h2>{{ item.name }}</h2>
@@ -21,6 +31,9 @@
       <div><b>Beschreibung:</b><br />{{ item.description }}</div>
       <div>
         <div>
+          @for (review of item.reviews; track review) {
+          <p>{{ review.name }}{{ review.text }}</p>
+          } @empty { No Comment! }
           <!-- <div><b>{{review.name}}:</b><br>{{review.text}}</div> -->
         </div>
         <div>
