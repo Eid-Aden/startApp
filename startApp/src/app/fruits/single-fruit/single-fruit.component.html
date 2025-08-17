@@ -35,7 +35,9 @@
         <!-- <div><b>{{review.name}}:</b><br>{{review.text}}</div> -->
       </div>
       <div>
-        <input type="text" /><button>
+        <input [(ngModel)]="inputDate" type="text" />
+
+        <button type="button" (click)="sendInputData()">
           <img src="./assets/img/arrow-35-32.png" alt="" srcset="" />
         </button>
       </div>

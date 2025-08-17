@@ -7,7 +7,10 @@
 <div class="fruitlist_content">
   @for(singlefruit of fruitlist; track singlefruit.name; let index =$index){
   <p>
-    <app-single-fruit [fruit]="singlefruit"></app-single-fruit>
+    <app-single-fruit
+      (fruiteName)="addComment($event, index)"
+      [fruit]="singlefruit"
+    ></app-single-fruit>
   </p>
 
   }

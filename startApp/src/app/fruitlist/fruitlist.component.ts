@@ -83,7 +83,7 @@ export class FruitlistComponent {
     },
   ];
 
-  showSomthing(index: number) {
-    console.log(index);
+  addComment(comment: string, index: number) {
+    console.log(comment);
   }
 }

@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-single-fruit',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './single-fruit.component.html',
   styleUrl: './single-fruit.component.scss',
 })
@@ -21,4 +22,9 @@ export class SingleFruitComponent {
       { name: 'Olaf P.', text: 'Kann man mal machen' },
     ],
   };
+  inputDate = '';
+  @Output() fruiteName = new EventEmitter<string>();
+  sendInputData() {
+    this.fruiteName.emit(this.inputDate);
+  }
 }
